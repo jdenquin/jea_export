@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+        <fieldset name="infos">
+                <field
+                        name="id"
+                        type="hidden"
+                />
+                <field
+                	name="ref"
+                	type="text"
+                	label="COM_JEA_EXPORT_REF_LABEL"
+                	description="COM_JEA_EXPORT_REF_DESC"
+                	size="15"
+                	class="inputbox"
+                	readonly="true"
+                />
+                <field
+                	name="cook"
+                	type="list"
+                	label="COM_JEA_EXPORT_COOK_LABEL"
+                >
+                	<option value="1">Aucune</option>
+                	<option value="2">Americaine</option>
+                	<option value="3">Separee</option>
+                	<option value="4">Industrielle</option>
+                	<option value="5">Coin Cuisine</option>
+                	<option value="6">Americaine Equipee</option>
+                	<option value="7">Separee Equipee</option>
+                	<option value="8">Coin Cuisine Equipe</option>
+                	<option value="9">Equipee</option>
+                </field>
+                <field
+                        name="seller_name"
+                        type="text"
+                        label="COM_JEA_EXPORT_SELLER_NAME_LABEL"
+                        description="COM_JEA_EXPORT_SELLER_NAME_DESC"
+                        size="45"
+                        class="inputbox"
+                        default=""
+                />
+                <field
+                	name="phone"
+                	type="text"
+                	label="COM_JEA_EXPORT_PHONE_LABEL"
+                	description="COM_JEA_EXPORT_PHONE_DESC"
+                	size="10"
+                	class="inputbox"
+                	default=""
+                />
+                <field
+                	name="manda_date"
+                	type="calendar"
+                	label="COM_JEA_EXPORT_MANDA_DATE_LABEL"
+                	description="COM_JEA_EXPORT_MANDA_DATE_DESC"
+                />
+          </fieldset>
+</form>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>COM_JEA_EXPORT</name>
+	<creationDate>Avril 2013</creationDate>
+	<author>Jeremy DENQUIN</author>
+	<authorEmail>jdenquin@siopale.fr</authorEmail>
+	<authorUrl>www.siopale.fr</authorUrl>
+	<verions>0.1.2</verions>
+	<description>COM_JEA_EXPORT_DESCRIPTION</description>
+	
+	<!-- Runs on install -->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	
+	<!-- Runs on uninstall -->
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	
+	<!-- Runs on update -->
+	<update>
+    	<schemas>
+    		<schemapath type="mysql">sql/updates/mysql</schemapath>
+    	</schemas>
+    </update>
+    
+    <!-- media -->
+    <media destination="com_jea_export" folder="media">
+                <filename>index.html</filename>
+                <folder>images</folder>
+    </media>
+	
+	<!-- administration -->
+	<administration>
+		<!-- menu section -->
+		<menu img="../media/com_jea_export/images/logo-16x16.png">COM_JEA_EXPORT</menu>
+		<!-- submenu section -->
+		<submenu>
+			<menu controller="free" view="frees">COM_JEA_EXPORT_FREE_LABEL</menu>
+			<!-- <menu controller="pay" view="pays">COM_JEA_EXPORT_PAY_LABEL</menu> -->
+			<menu controller="annonce" view="annonces">COM_JEA_EXPORT_ANNONCE_LABEL</menu>
+			<menu controller="about" view="about">COM_JEA_EXPORT_ABOUT_LABEL</menu>
+		</submenu>
+		<!-- file section -->
+		<files folder="admin">
+			<!-- administration main files -->
+			<filename>index.html</filename>
+			<filename>jea_export.php</filename>
+			<!-- sql files section -->
+			<folder>sql</folder>
+			<!-- models files section -->
+			<folder>models</folder>
+			<!-- views files section -->
+			<folder>views</folder>
+			<!-- controllers files section -->
+			<folder>controllers</folder>
+			<!-- tables files section -->
+			<folder>tables</folder>
+			<!-- helpers files section -->
+			<folder>helpers</folder>
+			<!-- exports files section -->
+			<folder>exports</folder>
+		</files>
+		
+		<!-- language files section -->
+		<languages folder="admin">
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_jea_export.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_jea_export.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
