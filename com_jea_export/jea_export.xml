@@ -63,8 +63,8 @@
 			<folder>tables</folder>
 			<!-- helpers files section -->
 			<folder>helpers</folder>
-			<!-- exports files section -->
-			<folder>exports</folder>
+			<!-- pasrl process files section -->
+			<folder>pasrlprocess</folder>
 		</files>
 		
 		<!-- language files section -->

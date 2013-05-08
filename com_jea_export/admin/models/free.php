@@ -120,7 +120,7 @@ class Jea_ExportModelFree extends JModelAdmin
 						a.manda_date
 						');
 				$query->from('#__jea_export_annonce AS a');
-				$query->where('pasrl_id LIKE \'%' . $pasrl_ref . '%\'');
+				$query->where('pasrl_id LIKE \'%' . $pasrl_ref . '%\' AND a.id IN (SELECT pties.id from #__jea_properties pties)');
 				
 				$query->select('
 						p.ref, 

@@ -22,11 +22,14 @@ class Jea_ExportModelAnnonces extends JModelList
 		$query = $db->getQuery(true);
 		
 		// select annonce infos
+		// on ne selectionne que les annonces presentes a la fois dans la table properties et annonces
+		// pour eviter d'afficher les annonces supprimees
 		$query->select('p.id, p.ref, p.pasrl_id');
 		$query->from('#__jea_export_annonce AS p');
+		$query->where('p.id IN (SELECT pties.id from #__jea_properties pties)');
 		
 		// properties join
-		$query->select('pties.title, pties.town_id, pties.images');
+		$query->select('pties.id as id_pties, pties.title, pties.town_id, pties.images');
 		$query->join('LEFT', '#__jea_properties AS pties ON pties.id = p.id');
 		
 		// town join

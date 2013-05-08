@@ -49,7 +49,7 @@ class Jea_ExportViewAnnonces extends JView
          */
         protected function addToolBar()
         {
-        	JToolBarHelper::title(JText::_('COM_JEA_EXPORT_ANNONCE_TITLE'));
+        	JToolBarHelper::title(JText::_('COM_JEA_EXPORT_ANNONCE_TITLE'), 'jea_export');
         	JToolBarHelper::custom('annonce.ajouter', 'new', 'new', 'Ajouter', false);
         	JToolBarHelper::editList('annonce.edit');
         }

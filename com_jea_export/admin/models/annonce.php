@@ -126,4 +126,25 @@ class Jea_ExportModelAnnonce extends JModelAdmin
         	
         	return $nb;
         }
+        
+        /**
+         * Method cleanOld
+         */
+        public function cleanOld()
+        {
+        	// Create a new query object
+        	$db = JFactory::getDBO();
+        	$query = $db->getQuery(true);
+        	
+        	// supprime les annonces non présentes dans la table properties
+        	$query->delete($db->quoteName('#__jea_export_annonce'));
+        	$query->where('id NOT IN (SELECT pties.id from #__jea_properties pties)');
+        	$db->setQuery($query);
+        	
+        	try{
+        		$result = $db->query();
+        	}catch(Exception $e){
+        		//return $e;
+        	}
+        }
 }

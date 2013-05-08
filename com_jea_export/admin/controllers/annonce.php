@@ -40,6 +40,10 @@ class Jea_ExportControllerAnnonce extends JControllerForm
 		// Get the model
 		$model = $this->getModel();
 		
+		//supprimer les annonces non presentes dans la table properties
+		$model->cleanOld();
+		
+		// ajouter les annonces non présentes dans jea export
 		$return = $model->ajouter();
 		
 		//Redirect to the list screen
